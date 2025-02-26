@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Poster Box -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/posterBox"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            android:background="@android:color/white">
+
+            <!-- Ad Image -->
+            <ImageView
+                android:id="@+id/adImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/sample_ad" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Close Icon -->
+        <ImageView
+            android:id="@+id/closeButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignEnd="@id/posterBox"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/close"
+            android:padding="4dp"
+            android:elevation="4dp" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

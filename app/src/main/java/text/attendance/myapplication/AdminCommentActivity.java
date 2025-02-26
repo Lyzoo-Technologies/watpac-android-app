@@ -1,0 +1,54 @@
+package text.attendance.myapplication;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AdminCommentActivity extends AppCompatActivity {
+    private LinearLayout home, ad, logout;
+
+    protected void onCreate (Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admin_comment_manage);
+
+        // Initialize LinearLayouts
+        home = findViewById(R.id.home1);
+        ad = findViewById(R.id.ad1);
+        logout = findViewById(R.id.logout1);
+
+        // Home Click -> Go to AdminDashboardActivity
+        home.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminCommentActivity.this, AdminDashboardActivity.class);
+            startActivity(intent);
+        });
+
+        // Ad Click -> Go to AdminAdActivity
+        ad.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminCommentActivity.this, AdminAdActivity.class);
+            startActivity(intent);
+        });
+
+        // Logout Click -> Logout and Go to SignInActivity
+        logout.setOnClickListener(v -> {
+            logoutUser();
+        });
+    }
+
+    private void logoutUser() {
+        // Clear SharedPreferences (if storing login session)
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.apply();
+
+        // Go to SignInActivity and clear the backstack
+        Intent intent = new Intent(AdminCommentActivity.this, SignInActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish(); // Close current activity
+    }
+
+}

@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="company_name_hint">Company Name <font color="#FF0000">*</font></string>
+    <string name="mobile_number_hint">Mobile Number <font color="#FF0000">*</font></string>
+    <string name="address_hint">Address <font color="#FF0000">*</font></string>
+    <string name="email_hint">Email <font color="#FF0000">*</font></string>
+    <string name="upload_hint">Upload Director/Engineer Photo(1 MB) <font color="#FF0000">*</font></string>
+    <string name="gst_number_hint">GST Certificate Number <font color="#FF0000">*</font></string>
+    <string name="soil_test_hint">Soil Test PDF(1 MB) <font color="#FF0000">*</font></string>
+    <string name="building_hint">Building Draft PDF(1 MB) <font color="#FF0000">*</font></string>
+    <string name="concrete_test_hint">Concrete Test(1 MB) <font color="#FF0000">*</font></string>
+    <string name="Govr_hint">Government Rules(1 MB) <font color="#FF0000">*</font></string>
+    <string name="basement_hint">Basement Stage Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="related_hint">Other Related Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="steel_hint">Steel Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="cement_hint">Cement Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="jelly_hint">Aggregate Jelly Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="lintel_hint">Lintel Stage Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="brick_hint">Bricks and Wood Work Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="bricks_hint">Bricks Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="cements_hint">Cement Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="wood_hint">Wood Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="roof_hint">Roof Stage Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="centring_hint">Centering Work Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="concrete_hint">Concrete Filling Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="steels_hint">Steel Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="electric_hint">Electric Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="pipes_hint">Pipes Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="sunken_hint">Sunken Slab Water Proofing Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="mother_hint">Mother Slab Water Proofing Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="basements_hint">Basement Water Proofing Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="chemical_hint">Water Proofing Chemical Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="final_hint">Final Stage Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="interior_hint">All Interior Work Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="exterior_hint">All Exterior Work Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="paint_hint">Paint Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="door_hint">Door Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="switch_hint">Wire and Switch Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="tiles_hint">Tiles Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="plumbing_hint">Plumbing Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="tank_hint">Water Tank Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="sump_hint">Sump/Septic Tank Video(15 MB) <font color="#FF0000">*</font></string>
+    <string name="material_hint">Waterproof Material Image(1 MB) <font color="#FF0000">*</font></string>
+
+    <string name="otp_hint">Not received OTP? <font color="#FF0000" style="bold"> Resend</font></string>
+
+</resources>
