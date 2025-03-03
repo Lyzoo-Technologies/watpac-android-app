@@ -147,6 +147,7 @@
                     android:textSize="14sp"/>
 
                 <ImageView
+                    android:id="@+id/admincomment"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/comment"
@@ -154,7 +155,7 @@
                     android:layout_marginEnd="6dp"/>
 
                 <TextView
-                    android:id="@+id/comment_count"
+                    android:id="@+id/admincomment1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="50 Comments"

@@ -41,5 +41,8 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation (libs.speedviewlib)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.volley)
 
 }

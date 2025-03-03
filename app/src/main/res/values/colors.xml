@@ -3,5 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="button_blue">#103B72</color>
+    <color name="activeColor">#A0C8F5</color>
+    <color name="defaultColor">#61A5F2</color>
+    <color name="custom_blue">#61A5F2</color>
 
 </resources>

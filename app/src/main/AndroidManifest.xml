@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
@@ -27,9 +28,14 @@
 
         <activity android:name=".SignInActivity" android:exported="true"/>
         <activity android:name=".RegisterActivity" android:exported="true"/>
-        <activity android:name=".AdminDashboardActivity" android:exported="true" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".ForgotPasswordActivity" android:exported="true"/>
+        <activity android:name=".OtpVerificationActivity" android:exported="true"/>
+        <activity android:name=".AdminDashboardActivity" android:exported="true" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".AdminProjectManageActivity" android:exported="true"/>
+        <activity android:name=".AdminAdActivity" android:exported="true"/>
         <activity android:name=".AdminProjectActivity" android:exported="true"/>
+        <activity android:name=".AdminCommentActivity" android:exported="true"/>
+        <activity android:name=".EngineerTankActivity" android:exported="true"/>
         <activity android:name=".EngineerUploadActivity" android:exported="true"/>
         <activity android:name=".EngineerCompanyDetailsActivity" android:exported="true" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".EngineerBasementActivity" android:exported="true"/>
@@ -38,8 +44,6 @@
         <activity android:name=".EngineerWaterproofActivity" android:exported="true"/>
         <activity android:name=".EngineerFinalActivity" android:exported="true"/>
         <activity android:name=".UserCommentActivity" android:exported="true" android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".OtpVerificationActivity" android:exported="true"/>
-        <activity android:name=".EngineerTankActivity" android:exported="true"/>
 
     </application>
 

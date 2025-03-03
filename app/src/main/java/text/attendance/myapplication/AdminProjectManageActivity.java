@@ -3,7 +3,10 @@ package text.attendance.myapplication;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +18,25 @@ public class AdminProjectManageActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_project_manage);
+
+
+        ImageView comment = findViewById(R.id.admincomment);
+        comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminProjectManageActivity.this, AdminCommentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView comment1 = findViewById(R.id.admincomment1);
+        comment1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminProjectManageActivity.this, AdminCommentActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Initialize LinearLayouts
         home = findViewById(R.id.home3);
@@ -53,5 +75,4 @@ public class AdminProjectManageActivity extends AppCompatActivity {
         finish(); // Close current activity
     }
 
-    }
 }

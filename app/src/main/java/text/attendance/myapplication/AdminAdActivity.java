@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AdminAdActivity extends AppCompatActivity {
 
     private LinearLayout home, ad, logout;
+    private ImageView homeIcon, adIcon;
 
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView uploadImage1;
@@ -32,22 +33,30 @@ public class AdminAdActivity extends AppCompatActivity {
             }
         });
 
-        // Initialize LinearLayouts
         home = findViewById(R.id.home);
         ad = findViewById(R.id.ad);
         logout = findViewById(R.id.logout);
 
-        // Home Click -> Go to AdminDashboardActivity
+        homeIcon = findViewById(R.id.homeIcon);
+        adIcon = findViewById(R.id.adIcon);
+
+        // Restore last active screen from SharedPreferences
+        setActiveIcon();
+
         home.setOnClickListener(v -> {
+            saveActiveScreen("AdminDashboardActivity");
             Intent intent = new Intent(AdminAdActivity.this, AdminDashboardActivity.class);
             startActivity(intent);
+            finish();
         });
 
-        // Ad Click -> Go to AdminAdActivity
         ad.setOnClickListener(v -> {
+            saveActiveScreen("AdminAdActivity");
             Intent intent = new Intent(AdminAdActivity.this, AdminAdActivity.class);
             startActivity(intent);
+            finish();
         });
+
 
         // Logout Click -> Logout and Go to SignInActivity
         logout.setOnClickListener(v -> {
@@ -84,6 +93,29 @@ public class AdminAdActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
             Uri imageUri = data.getData();
             uploadImage1.setImageURI(imageUri);
+        }
+    }
+
+    private void saveActiveScreen(String screenName) {
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("activeScreen", screenName);
+        editor.apply();
+    }
+
+    private void setActiveIcon() {
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String activeScreen = preferences.getString("activeScreen", "");
+
+        if (activeScreen.equals("AdminDashboardActivity")) {
+            homeIcon.setImageResource(R.drawable.active_home);
+            adIcon.setImageResource(R.drawable.radio);
+        } else if (activeScreen.equals("AdminAdActivity")) {
+            homeIcon.setImageResource(R.drawable.home);
+            adIcon.setImageResource(R.drawable.active_radio);
+        } else {
+            homeIcon.setImageResource(R.drawable.home);
+            adIcon.setImageResource(R.drawable.radio);
         }
     }
 }

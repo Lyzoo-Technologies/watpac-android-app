@@ -3,7 +3,9 @@ package text.attendance.myapplication;  // Update with your package name
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,36 @@ public class EngineerLintelActivity extends AppCompatActivity {
         findViewById(R.id.upload_image3).setOnClickListener(v -> openFileChooser("upload_image3"));
         findViewById(R.id.upload_image4).setOnClickListener(v -> openFileChooser("upload_image4"));
         findViewById(R.id.upload_image5).setOnClickListener(v -> openFileChooser("upload_image5"));
+
+        // Initialize LinearLayouts
+        LinearLayout engihome = findViewById(R.id.engihome7);
+        LinearLayout engiupload = findViewById(R.id.engiupload7);
+        LinearLayout engilogout = findViewById(R.id.engilogout7);
+
+        // Debugging: Check if they are found
+        if (engihome == null || engiupload == null || engilogout == null) {
+            Log.e("EngineerBasementActivity", "One or more LinearLayouts are null! Check XML IDs.");
+            return; // Stop execution if views are null
+        }
+
+        // Set OnClickListeners
+        engihome.setOnClickListener(v -> {
+            Intent intent = new Intent(EngineerLintelActivity.this, EngineerDashboardActivity.class);
+            startActivity(intent);
+        });
+
+        engiupload.setOnClickListener(v -> {
+            Intent intent = new Intent(EngineerLintelActivity.this, EngineerUploadActivity.class);
+            startActivity(intent);
+        });
+
+        engilogout.setOnClickListener(v -> {
+            // Perform logout (optional: clear session data)
+            Intent intent = new Intent(EngineerLintelActivity.this, SignInActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clears activity stack
+            startActivity(intent);
+            finish(); // Close the current activity
+        });
     }
 
     private void openFileChooser(String fileType) {

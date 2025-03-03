@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/civilbg11"
+        android:src="@drawable/civilbg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,6 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="DuplicateIds" />
 
+    <!-- Top Bar -->
     <RelativeLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -57,142 +58,113 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Manage Project"
+            android:text="Profile Settings"
             android:textStyle="bold"
             android:textSize="24sp"
             android:textColor="#61a5f2"/>
-
     </RelativeLayout>
 
-    <ScrollView
-        android:id="@+id/mainScroll"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintBottom_toTopOf="@id/footerLayout"
-        android:padding="16dp"
-        tools:ignore="NotSibling">
+    <!-- Profile Section (Placed under the top bar and above the footer) -->
 
+
+
+    <LinearLayout
+        android:id="@+id/profileSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/footerLayout"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <!-- Profile Image with Edit Icon -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/account" />
+
+            <!-- Edit Icon below profile image -->
+            <ImageView
+                android:id="@+id/editProfileIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignEnd="@id/profileImage"
+                android:layout_alignBottom="@id/profileImage"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="3dp"
+                android:src="@drawable/edit" />
+        </RelativeLayout>
+
+        <!-- Username with Edit Icon -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="#61a5f2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Edit Icon next to Username -->
+            <ImageView
+                android:id="@+id/editUsernameIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/username"
+                android:layout_alignBottom="@id/username"
+                android:layout_marginStart="2dp"
+                android:src="@drawable/edit" />
+        </RelativeLayout>
+
+        <!-- Categories (Change Password and Logout) -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#D9071C3B"
-            android:elevation="4dp"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp"
-            android:radius="8dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
 
-            <!-- Profile Section -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/changePassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="12dp"
+                android:text="Change Password"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="25dp"
-                    app:cardElevation="0dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/contact"
-                        android:scaleType="centerCrop"/>
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Company Name"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#61a5f2"
-                    android:layout_marginLeft="10dp"/>
-            </LinearLayout>
-
-            <!-- Post Image -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginTop="12dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/rounded_corner"/>
-
-            <!-- Like, Comment, Share Section -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="12dp">
-
-                <ImageView
-                    android:id="@+id/like_button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/like"
-                    android:layout_marginEnd="6dp"/>
-
-                <TextView
-                    android:id="@+id/like_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="120 Likes"
-                    android:textColor="#61a5f2"
-                    android:textSize="14sp"/>
-
-                <ImageView
-                    android:id="@+id/engicomment"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/comment"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="6dp"/>
-
-                <TextView
-                    android:id="@+id/engicomment1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="50 Comments"
-                    android:textColor="#61a5f2"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-
-            <!-- Score with Star Rating -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="12dp">
-
-                <TextView
-                    android:id="@+id/score_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cibil Score: 800"
-                    android:textStyle="bold"
-                    android:textColor="#61a5f2"
-                    android:textSize="14sp"/>
-
-                <ImageView
-                    android:layout_width="90dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/fivestar"
-                    android:layout_marginEnd="4dp" />
-
-            </LinearLayout>
-
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="12dp"
+                android:text="Logout"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
         </LinearLayout>
+    </LinearLayout>
 
-    </ScrollView>
-
-    <!-- Fixed Footer Layout -->
+    <!-- Footer Layout -->
     <LinearLayout
         android:id="@+id/footerLayout"
         android:layout_width="match_parent"
@@ -207,7 +179,7 @@
 
         <!-- First Inner Layout -->
         <LinearLayout
-            android:id="@+id/engihome2"
+            android:id="@+id/home"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -215,6 +187,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/homeIcon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/home" />
@@ -229,7 +202,7 @@
 
         <!-- Second Inner Layout -->
         <LinearLayout
-            android:id="@+id/engiupload2"
+            android:id="@+id/ad"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -237,36 +210,38 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/adIcon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/upload" />
+                android:src="@drawable/ad" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload"
+                android:text="Advertise"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>
 
         <!-- Third Inner Layout -->
         <LinearLayout
-            android:id="@+id/engilogout2"
+            android:id="@+id/logout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            tools:ignore="DuplicateIds">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout" />
+                android:src="@drawable/account" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
+                android:text="Profile"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>

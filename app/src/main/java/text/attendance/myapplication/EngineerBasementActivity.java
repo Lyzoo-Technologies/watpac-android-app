@@ -1,9 +1,13 @@
-package text.attendance.myapplication;  // Update with your package name
+package text.attendance.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +28,39 @@ public class EngineerBasementActivity extends AppCompatActivity {
         findViewById(R.id.upload_image3).setOnClickListener(v -> openFileChooser("upload_image3"));
         findViewById(R.id.upload_image4).setOnClickListener(v -> openFileChooser("upload_image4"));
         findViewById(R.id.upload_image5).setOnClickListener(v -> openFileChooser("upload_image5"));
+
+        // Initialize LinearLayouts
+        LinearLayout engihome = findViewById(R.id.engihome);
+        LinearLayout engiupload = findViewById(R.id.engiupload);
+        LinearLayout engilogout = findViewById(R.id.engilogout);
+
+        // Debugging: Check if they are found
+        if (engihome == null || engiupload == null || engilogout == null) {
+            Log.e("EngineerBasementActivity", "One or more LinearLayouts are null! Check XML IDs.");
+            return; // Stop execution if views are null
+        }
+
+        // Set OnClickListeners
+        engihome.setOnClickListener(v -> {
+            Intent intent = new Intent(EngineerBasementActivity.this, EngineerDashboardActivity.class);
+            startActivity(intent);
+        });
+
+        engiupload.setOnClickListener(v -> {
+            Intent intent = new Intent(EngineerBasementActivity.this, EngineerUploadActivity.class);
+            startActivity(intent);
+        });
+
+        engilogout.setOnClickListener(v -> {
+            // Perform logout (optional: clear session data)
+            Intent intent = new Intent(EngineerBasementActivity.this, SignInActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clears activity stack
+            startActivity(intent);
+            finish(); // Close the current activity
+        });
     }
 
+    // Moved inside the class
     private void openFileChooser(String fileType) {
         selectedFileType = fileType;
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -44,4 +79,6 @@ public class EngineerBasementActivity extends AppCompatActivity {
             // You can now upload the file to Firebase Storage or show a preview
         }
     }
+
+
 }

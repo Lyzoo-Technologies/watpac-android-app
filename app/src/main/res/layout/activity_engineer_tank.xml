@@ -251,6 +251,7 @@
 
         <!-- First Inner Layout -->
         <LinearLayout
+            android:id="@+id/engihome9"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -272,6 +273,7 @@
 
         <!-- Second Inner Layout -->
         <LinearLayout
+            android:id="@+id/engiupload9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -293,6 +295,7 @@
 
         <!-- Third Inner Layout -->
         <LinearLayout
+            android:id="@+id/engilogout9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
