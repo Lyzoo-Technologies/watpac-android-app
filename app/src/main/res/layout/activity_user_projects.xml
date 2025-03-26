@@ -75,6 +75,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <TextView
+                        android:id="@+id/companyNameDisplay"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -145,7 +146,10 @@
         android:backgroundTint="#61a5f2"
         app:layout_constraintTop_toBottomOf="@id/infolayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -165,11 +169,11 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="Soil Test Icon"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:contentDescription="Soil Test Icon"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -183,7 +187,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/soil" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -191,9 +195,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:gravity="center"
-                        android:text="Soil     Test"
+                        android:text="Soil        Test"
                         android:textColor="#FFFFFF"
-                        android:textSize="5sp" />
+                        android:textSize="14sp" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -208,11 +213,11 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="Soil Test Icon"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:contentDescription="Soil Test Icon"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -226,7 +231,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/draft" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -236,7 +241,7 @@
                         android:gravity="center"
                         android:text="Building Draft"
                         android:textColor="#FFFFFF"
-                        android:textSize="5sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -251,11 +256,11 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="Soil Test Icon"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:contentDescription="Soil Test Icon"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -269,7 +274,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/concrete" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -279,7 +284,7 @@
                         android:gravity="center"
                         android:text="Concrete Test"
                         android:textColor="#FFFFFF"
-                        android:textSize="5sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -293,10 +298,10 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -310,7 +315,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/gov" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -320,7 +325,7 @@
                         android:gravity="center"
                         android:text="Govt. regulations"
                         android:textColor="#FFFFFF"
-                        android:textSize="5sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -328,6 +333,7 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -1015,7 +1021,6 @@
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="8dp"
-                            android:layout_marginBottom="400dp"
                             android:background="@drawable/rounded_corner">
 
                             <LinearLayout
@@ -1038,6 +1043,18 @@
                             </LinearLayout>
 
                         </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnDownload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Download"
+                            android:padding="10dp"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="#61a5f2"
+                            android:textColor="#FFFFFF"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="400dp"/>
 
 
                     </LinearLayout>

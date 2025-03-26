@@ -81,17 +81,32 @@
                 app:tint="@color/white" />
 
             <!-- Editable Search Field -->
-            <EditText
-                android:id="@+id/searchEditText"
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Search Builders..."
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:background="@android:color/transparent"
-                android:inputType="text"
-                android:maxLines="1"
-                android:textSize="14sp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search Builders..."
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textSize="14sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>
@@ -104,9 +119,11 @@
         app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintBottom_toTopOf="@id/footerLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:descendantFocusability="blocksDescendants">
 
         <LinearLayout
+            android:id="@+id/companyContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -182,10 +199,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Projects"
+                            android:text="View Project"
                             android:textSize="12sp"
                             android:textColor="@android:color/white"/>
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/fivestar"/>
                     </LinearLayout>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -260,12 +282,13 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout" />
+                android:src="@drawable/account" />
 
             <TextView
+                android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
+                android:text="Profile"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>

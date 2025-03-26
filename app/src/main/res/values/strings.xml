@@ -41,6 +41,7 @@
     <string name="tank_hint">Water Tank Video(15 MB) <font color="#FF0000">*</font></string>
     <string name="sump_hint">Sump/Septic Tank Video(15 MB) <font color="#FF0000">*</font></string>
     <string name="material_hint">Waterproof Material Image(1 MB) <font color="#FF0000">*</font></string>
+    <string name="phone_hint">Phone Number <font color="#FF0000">*</font></string>
 
     <string name="otp_hint">Not received OTP? <font color="#FF0000" style="bold"> Resend</font></string>
 

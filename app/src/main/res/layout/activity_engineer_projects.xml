@@ -61,6 +61,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/profile_image"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         app:cardCornerRadius="25dp"
@@ -75,6 +76,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <TextView
+                        android:id="@+id/companyNameDisplay"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -145,7 +147,10 @@
         android:backgroundTint="#61a5f2"
         app:layout_constraintTop_toBottomOf="@id/infolayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -165,11 +170,11 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:contentDescription="Soil Test Icon"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:contentDescription="Soil Test Icon"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -183,7 +188,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/soil" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -191,9 +196,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:gravity="center"
-                        android:text="Soil     Test"
+                        android:text="Soil        Test"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp" />
+                        android:textSize="14sp" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -208,10 +214,11 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:contentDescription="Soil Test Icon"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -225,7 +232,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/draft" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -235,7 +242,7 @@
                         android:gravity="center"
                         android:text="Building Draft"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -250,10 +257,11 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:contentDescription="Soil Test Icon"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -267,7 +275,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/concrete" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -277,7 +285,7 @@
                         android:gravity="center"
                         android:text="Concrete Test"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -291,10 +299,10 @@
                 android:paddingEnd="8dp">
 
                 <!-- Left Image -->
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/pdf" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:src="@drawable/pdf" />-->
 
                 <!-- Right Layout (Contains Image on Top and Text Below) -->
                 <LinearLayout
@@ -308,7 +316,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/gov" />
+                        android:src="@drawable/pdf" />
 
                     <!-- Bottom Text -->
                     <TextView
@@ -316,9 +324,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:gravity="center"
-                        android:text="Govt. Procedure"
+                        android:text="Govt. regulations"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -326,6 +334,7 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -1012,7 +1021,6 @@
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="8dp"
-                            android:layout_marginBottom="400dp"
                             android:background="@drawable/rounded_corner">
 
                             <LinearLayout
@@ -1036,6 +1044,17 @@
 
                         </LinearLayout>
 
+                        <Button
+                            android:id="@+id/btnDownload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Download"
+                            android:padding="10dp"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="#61a5f2"
+                            android:textColor="#FFFFFF"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="400dp"/>
 
                     </LinearLayout>
 
@@ -1070,6 +1089,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/home_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/home" />
@@ -1092,6 +1112,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/upload_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/upload" />
@@ -1114,14 +1135,16 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/profile_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout" />
+                android:src="@drawable/account" />
 
             <TextView
+                android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
+                android:text="Profile"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>

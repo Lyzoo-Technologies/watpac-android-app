@@ -109,6 +109,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/companyContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -184,10 +185,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Projects"
+                            android:text="View Project"
                             android:textSize="12sp"
                             android:textColor="@android:color/white"/>
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/fivestar"/>
                     </LinearLayout>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -216,6 +222,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/home_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/home" />
@@ -238,6 +245,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/upload_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/upload" />
@@ -262,15 +270,28 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout" />
+                android:src="@drawable/account" />
 
             <TextView
+                android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
+                android:text="Profile"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>
 
     </LinearLayout>
+
+    <include
+        android:id="@+id/cardAdContainer"
+        layout="@layout/activity_admin_ad_contact"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/footerLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="12dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

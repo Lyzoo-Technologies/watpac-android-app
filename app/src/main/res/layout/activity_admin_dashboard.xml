@@ -108,6 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/companyContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -263,7 +264,7 @@
 
         <!-- Third Inner Layout -->
         <LinearLayout
-            android:id="@+id/logout2"
+            android:id="@+id/profile2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -273,12 +274,13 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout" />
+                android:src="@drawable/account" />
 
             <TextView
+                android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
+                android:text="Admin"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>

@@ -64,6 +64,8 @@
 
     </RelativeLayout>
 
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -72,48 +74,119 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="16dp">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:elevation="4dp"
-            android:paddingBottom="24dp">
+            android:padding="16dp">
 
-
-            <!-- Upload Image -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Upload Ad Poster"
-                android:textSize="16sp"
-                android:textColor="#61a5f2"
-                android:layout_marginBottom="8dp"/>
-
-            <ImageView
-                android:id="@+id/upload_image1"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="centerCrop"
-                android:src="@drawable/upload"
-                android:background="#61a5f2"
-                android:padding="16dp"
-                android:clickable="true"
-                android:focusable="true"/>
-
-            <!-- Submit Button -->
-            <Button
-                android:id="@+id/submit_button"
+            <!-- Header Section -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Submit"
-                android:textSize="18sp"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="100dp"
-                android:backgroundTint="#2196F3"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="12dp">
+
+                <!-- "All Company Posters" Text -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="All Company Posters >>>"
+                    android:textSize="18sp"
+                    android:textColor="#61a5f2"
+                    android:textStyle="bold"/>
+
+                <!-- "Manage" Button -->
+                <Button
+                    android:id="@+id/manage_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#61a5f2"/>
+            </LinearLayout>
+
+            <!-- Main Form Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:elevation="4dp"
+                android:paddingBottom="24dp">
+
+
+                <EditText
+                    android:id="@+id/company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/company_name_hint"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#61a5f2"
+                    android:backgroundTint="#FFFFFF"/>
+
+                <EditText
+                    android:id="@+id/phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_hint"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#61a5f2"
+                    android:backgroundTint="#FFFFFF"/>
+
+                <!-- Upload Image -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Ad Poster"
+                    android:textSize="16sp"
+                    android:textColor="#61a5f2"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:id="@+id/upload_image1"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/upload"
+                    android:background="#61a5f2"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/selected_file_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No file chosen"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Submit Button -->
+                <Button
+                    android:id="@+id/submit_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="100dp"
+                    android:backgroundTint="#2196F3"/>
+            </LinearLayout>
+
         </LinearLayout>
+
 
     </ScrollView>
 
@@ -194,7 +267,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profile"
+                android:text="Admin"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>

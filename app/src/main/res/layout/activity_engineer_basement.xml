@@ -116,7 +116,15 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"/>
-
+            <TextView
+                android:id="@+id/tv_basement_stage_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:ellipsize="end"
+                android:maxLines="1" />
             <!-- Upload Image -->
             <TextView
                 android:layout_width="wrap_content"
@@ -125,6 +133,7 @@
                 android:textSize="16sp"
                 android:textColor="#61a5f2"
                 android:layout_marginBottom="8dp"/>
+
 
             <ImageView
                 android:id="@+id/upload_image2"
@@ -137,6 +146,16 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"/>
+            <TextView
+                android:id="@+id/tv_basement_other_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
 
             <!-- Upload Image -->
             <TextView
@@ -146,6 +165,7 @@
                 android:textSize="16sp"
                 android:textColor="#61a5f2"
                 android:layout_marginBottom="8dp"/>
+
 
             <ImageView
                 android:id="@+id/upload_image3"
@@ -158,6 +178,15 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"/>
+            <TextView
+                android:id="@+id/tv_basement_steel_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:ellipsize="end"
+                android:maxLines="1" />
 
             <!-- Upload Image -->
             <TextView
@@ -179,7 +208,15 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"/>
-
+            <TextView
+                android:id="@+id/tv_basement_cement_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:ellipsize="end"
+                android:maxLines="1" />
             <!-- Upload Image -->
             <TextView
                 android:layout_width="wrap_content"
@@ -200,10 +237,19 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"/>
+            <TextView
+                android:id="@+id/tv_basement_jelly_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:ellipsize="end"
+                android:maxLines="1" />
 
             <!-- Submit Button -->
             <Button
-                android:id="@+id/submit_button"
+                android:id="@+id/upload_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Submit"

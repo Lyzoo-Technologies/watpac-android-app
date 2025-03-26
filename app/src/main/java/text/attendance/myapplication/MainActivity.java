@@ -1,9 +1,9 @@
-package text.attendance.myapplication;  // Update with your package name
+package text.attendance.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,11 +11,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+        // ✅ Show splash screen for 1.5 seconds before redirecting
+        new Handler().postDelayed(this::checkLoginStatus, 1500);
+    }
+
+    private void checkLoginStatus() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+        String userRole = sharedPreferences.getString("userRole", "");
+
+        Intent intent;
+
+        if (isLoggedIn && userRole != null && !userRole.isEmpty()) {
+            // ✅ Redirect to appropriate dashboard
+            intent = getDashboardIntent(userRole);
+        } else {
+            // ✅ Redirect to Login screen (Force user to sign in)
+            intent = new Intent(MainActivity.this, SignInActivity.class);
+        }
+
         startActivity(intent);
-
-        // Finish MainActivity so it doesn't stay in the back stack
         finish();
+    }
 
+    private Intent getDashboardIntent(String role) {
+        switch (role) {
+            case "Admin":
+                return new Intent(this, AdminDashboardActivity.class);
+            case "Builder":
+                return new Intent(this, EngineerDashboardActivity.class); // FIXED REDIRECTION
+            case "Investor":
+                return new Intent(this, UserDashboardActivity.class);
+            default:
+                return new Intent(this, UserDashboardActivity.class);
+        }
     }
 }

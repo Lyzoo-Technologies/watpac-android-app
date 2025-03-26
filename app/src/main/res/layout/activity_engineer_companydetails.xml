@@ -105,6 +105,7 @@
                 android:textSize="16sp"
                 android:textColor="#61a5f2"
                 android:layout_marginBottom="8dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,7 +124,17 @@
                 android:background="#61a5f2"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"/>
+                android:focusable="true" />
+            <TextView
+                android:id="@+id/image_file_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No file chosen"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+
 
             <!-- Company Name -->
             <EditText
@@ -225,6 +236,7 @@
                         android:textColor="#61a5f2"
                         android:layout_marginBottom="8dp"/>
 
+
                     <ImageView
                         android:id="@+id/upload_soil_test"
                         android:layout_width="80dp"
@@ -235,6 +247,15 @@
                         android:padding="16dp"
                         android:clickable="true"
                         android:focusable="true"/>
+
+                    <TextView
+                        android:id="@+id/pdf_soil_test_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen"
+                        android:textSize="14sp"
+                        android:textColor="@color/white"
+                        android:visibility="gone"/>
                 </LinearLayout>
 
                 <!-- Upload Building Draft PDF -->
@@ -264,6 +285,15 @@
                         android:padding="16dp"
                         android:clickable="true"
                         android:focusable="true"/>
+
+                    <TextView
+                        android:id="@+id/pdf_building_draft_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -303,6 +333,15 @@
                         android:padding="16dp"
                         android:clickable="true"
                         android:focusable="true"/>
+
+                    <TextView
+                        android:id="@+id/pdf_concrete_test_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"/>
                 </LinearLayout>
 
                 <!-- Upload Government Rules PDF -->
@@ -332,6 +371,15 @@
                         android:padding="16dp"
                         android:clickable="true"
                         android:focusable="true"/>
+
+                    <TextView
+                        android:id="@+id/pdf_govt_rules_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -419,12 +467,12 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout" />
+                android:src="@drawable/account" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
+                android:text="Profile"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>

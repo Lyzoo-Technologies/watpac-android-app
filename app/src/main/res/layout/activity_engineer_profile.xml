@@ -66,8 +66,6 @@
 
     <!-- Profile Section (Placed under the top bar and above the footer) -->
 
-
-
     <LinearLayout
         android:id="@+id/profileSection"
         android:layout_width="match_parent"
@@ -97,15 +95,15 @@
                 android:src="@drawable/account" />
 
             <!-- Edit Icon below profile image -->
-            <ImageView
-                android:id="@+id/editProfileIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignEnd="@id/profileImage"
-                android:layout_alignBottom="@id/profileImage"
-                android:layout_marginEnd="7dp"
-                android:layout_marginBottom="3dp"
-                android:src="@drawable/edit" />
+<!--            <ImageView-->
+<!--                android:id="@+id/editProfileIcon"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_alignEnd="@id/profileImage"-->
+<!--                android:layout_alignBottom="@id/profileImage"-->
+<!--                android:layout_marginEnd="7dp"-->
+<!--                android:layout_marginBottom="3dp"-->
+<!--                android:src="@drawable/edit" />-->
         </RelativeLayout>
 
         <!-- Username with Edit Icon -->
@@ -115,25 +113,41 @@
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/username"
+            <!-- LinearLayout for Username -->
+            <LinearLayout
+                android:id="@+id/usernameLayouts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
-                android:textColor="#61a5f2"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
-            <!-- Edit Icon next to Username -->
-            <ImageView
-                android:id="@+id/editUsernameIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignEnd="@id/username"
-                android:layout_alignBottom="@id/username"
-                android:layout_marginStart="2dp"
-                android:src="@drawable/edit" />
+                <TextView
+                    android:id="@+id/usernameLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textColor="#61a5f2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- LinearLayout for Edit Icon -->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/editIconLayout"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toEndOf="@id/usernameLayouts"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:gravity="center">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/editUsernameIcon"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/edit" />-->
+<!--            </LinearLayout>-->
+
         </RelativeLayout>
+
 
         <!-- Categories (Change Password and Logout) -->
         <LinearLayout
@@ -142,26 +156,107 @@
             android:layout_marginTop="16dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/changePassword"
+            <!-- Change Password Option -->
+            <LinearLayout
+                android:id="@+id/profilePswd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:background="?android:attr/selectableItemBackground"
                 android:padding="12dp"
-                android:text="Change Password"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/logout"
+                <ImageView
+                    android:id="@+id/changePasswordIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/locks"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/changePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change Password"
+                    android:textColor="#61a5f2"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/carLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:background="?android:attr/selectableItemBackground"
                 android:padding="12dp"
-                android:text="Logout"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/careIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/customer_care"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/care"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Care"
+                    android:textColor="#61a5f2"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/dropdownIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/dropdowns"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="12dp" />
+            </LinearLayout>
+
+            <!-- Email TextView (Initially Hidden) -->
+            <TextView
+                android:id="@+id/emailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="     Email: watpaccibil@gmail.com"
+                android:textColor="#61a5f2"
+                android:textSize="16sp"
+                android:paddingStart="48dp"
+                android:visibility="gone" />
+
+
+            <!-- Logout Option -->
+            <LinearLayout
+                android:id="@+id/profileLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/logoutIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/logout"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textColor="#61a5f2"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
 
     <!-- Footer Layout -->
@@ -187,7 +282,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/homeIcon"
+                android:id="@+id/home_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/home" />
@@ -210,15 +305,15 @@
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/adIcon"
+                android:id="@+id/upload_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ad" />
+                android:src="@drawable/upload" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Advertise"
+                android:text="Upload"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>
@@ -234,11 +329,13 @@
             tools:ignore="DuplicateIds">
 
             <ImageView
+                android:id="@+id/profile_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/account" />
 
             <TextView
+                android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile"

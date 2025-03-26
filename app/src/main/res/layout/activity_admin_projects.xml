@@ -75,6 +75,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <TextView
+                        android:id="@+id/companyNameDisplay"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -145,7 +146,10 @@
         android:backgroundTint="#61a5f2"
         app:layout_constraintTop_toBottomOf="@id/infolayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -330,6 +334,7 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -401,7 +406,6 @@
                     android:orientation="vertical"
                     android:padding="16dp"
                    >
-
 
                     <!-- Layout 1 -->
                     <LinearLayout
@@ -1132,12 +1136,12 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout" />
+                android:src="@drawable/account" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
+                android:text="Admin"
                 android:textSize="12sp"
                 android:textColor="@color/white"/>
         </LinearLayout>
